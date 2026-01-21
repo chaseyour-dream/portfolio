@@ -1,0 +1,276 @@
+/* Mobile-specific fixes for responsive design */
+
+/* Viewport fixes */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Prevent zoom on form inputs on iOS */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+textarea,
+select {
+  font-size: 16px !important;
+}
+
+/* Fix for iOS Safari viewport height */
+.hero {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+/* Ensure proper touch targets */
+button,
+.btn,
+a,
+input,
+textarea {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Fix for horizontal scrolling issues */
+* {
+  max-width: 100%;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile-specific grid fixes */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 130px !important;
+    padding-bottom: 40px !important;
+  }
+  
+  .hero-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 2rem !important;
+  }
+  
+  .hero-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    order: 2 !important;
+  }
+  
+  .hero-image {
+    width: 100% !important;
+    order: 1 !important;
+    margin-top: 20px !important;
+  }
+  
+  .image-container {
+    z-index: 10 !important;
+  }
+  
+  .profile-image {
+    z-index: 15 !important;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem !important;
+    line-height: 1.1 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem !important;
+    height: auto !important;
+    min-height: 40px !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .hero-description {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .hero-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+  
+  .hero-buttons .btn {
+    width: 200px !important;
+    max-width: 90% !important;
+  }
+  
+  .hero-social {
+    justify-content: center !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding-top: 120px !important;
+    padding-bottom: 30px !important;
+  }
+  
+  .hero .container {
+    padding: 0 15px !important;
+  }
+  
+  .hero-image {
+    margin-top: 30px !important;
+  }
+  
+  .hero-title {
+    font-size: 2rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem !important;
+  }
+  
+  .hero-description {
+    font-size: 0.9rem !important;
+  }
+  
+  .hero-buttons .btn {
+    width: 180px !important;
+    padding: 10px 20px !important;
+  }
+  
+  .image-container {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 110px !important;
+  }
+  
+  .hero-image {
+    margin-top: 25px !important;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.95rem !important;
+  }
+  
+  .hero-description {
+    font-size: 0.85rem !important;
+  }
+  
+  .hero-buttons .btn {
+    width: 160px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  .image-container {
+    width: 180px !important;
+    height: 180px !important;
+  }
+}
+
+/* Landscape orientation fixes */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    min-height: 100vh !important;
+    padding-top: 50px !important;
+    padding-bottom: 20px !important;
+  }
+  
+  .hero-content {
+    gap: 1rem !important;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .hero-description {
+    font-size: 0.8rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .image-container {
+    width: 150px !important;
+    height: 150px !important;
+  }
+}
+
+/* Fix for very small screens */
+@media (max-width: 360px) {
+  .hero .container {
+    padding: 0 10px !important;
+  }
+  
+  .hero-title {
+    font-size: 1.6rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+  
+  .hero-description {
+    font-size: 0.8rem !important;
+  }
+  
+  .hero-buttons .btn {
+    width: 140px !important;
+    font-size: 0.8rem !important;
+    padding: 8px 16px !important;
+  }
+  
+  .image-container {
+    width: 160px !important;
+    height: 160px !important;
+  }
+  
+  .social-link {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Fix for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .btn:hover {
+    transform: none !important;
+  }
+  
+  .social-link:hover {
+    transform: none !important;
+  }
+  
+  .btn:active {
+    transform: scale(0.95) !important;
+  }
+  
+  .social-link:active {
+    transform: scale(0.95) !important;
+  }
+}

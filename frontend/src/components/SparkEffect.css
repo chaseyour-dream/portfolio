@@ -1,0 +1,287 @@
+/* Galaxy Starfield Background - Smaller, Subtle Stars */
+
+.galaxy-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #0c0c1e 0%, #000000 70%);
+}
+
+.galaxy-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(120, 119, 198, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(255, 119, 198, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 40% 80%, rgba(120, 219, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 30%, rgba(196, 30, 58, 0.03) 0%, transparent 50%);
+  animation: nebula-drift 80s infinite linear;
+}
+
+@keyframes nebula-drift {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.05); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* Small distant stars - tiny twinkling points */
+.star-distant {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 50%, transparent 100%);
+  animation: distant-twinkle infinite ease-in-out;
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.star-distant:nth-child(3n) {
+  background: radial-gradient(circle, rgba(173, 216, 230, 0.8) 0%, rgba(173, 216, 230, 0.5) 50%, transparent 100%);
+  box-shadow: 0 0 1px rgba(173, 216, 230, 0.4);
+}
+
+.star-distant:nth-child(5n) {
+  background: radial-gradient(circle, rgba(255, 218, 185, 0.8) 0%, rgba(255, 218, 185, 0.5) 50%, transparent 100%);
+  box-shadow: 0 0 1px rgba(255, 218, 185, 0.4);
+}
+
+@keyframes distant-twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Small medium stars - gentle pulsing */
+.star-medium {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 60%, transparent 100%);
+  animation: medium-pulse infinite ease-in-out;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.star-medium:nth-child(4n) {
+  background: radial-gradient(circle, rgba(135, 206, 250, 0.7) 0%, rgba(135, 206, 250, 0.4) 60%, transparent 100%);
+  box-shadow: 0 0 2px rgba(135, 206, 250, 0.5);
+}
+
+.star-medium:nth-child(7n) {
+  background: radial-gradient(circle, rgba(255, 182, 193, 0.7) 0%, rgba(255, 182, 193, 0.4) 60%, transparent 100%);
+  box-shadow: 0 0 2px rgba(255, 182, 193, 0.5);
+}
+
+@keyframes medium-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Small bright stars - subtle glow */
+.star-bright {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.3) 70%, transparent 100%);
+  animation: bright-shine infinite ease-in-out;
+  box-shadow: 
+    0 0 3px rgba(255, 255, 255, 0.6),
+    0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.star-bright:nth-child(6n) {
+  background: radial-gradient(circle, rgba(196, 30, 58, 0.8) 0%, rgba(196, 30, 58, 0.3) 70%, transparent 100%);
+  box-shadow: 
+    0 0 3px rgba(196, 30, 58, 0.6),
+    0 0 6px rgba(196, 30, 58, 0.3);
+}
+
+@keyframes bright-shine {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+/* Subtle nebula particles */
+.star-nebula {
+  border-radius: 60%;
+  background: radial-gradient(ellipse, rgba(120, 119, 198, 0.15) 0%, rgba(120, 119, 198, 0.05) 60%, transparent 100%);
+  animation: nebula-float infinite ease-in-out;
+  filter: blur(1px);
+}
+
+.star-nebula:nth-child(3n) {
+  background: radial-gradient(ellipse, rgba(255, 119, 198, 0.12) 0%, rgba(255, 119, 198, 0.04) 60%, transparent 100%);
+}
+
+.star-nebula:nth-child(5n) {
+  background: radial-gradient(ellipse, rgba(120, 219, 255, 0.1) 0%, rgba(120, 219, 255, 0.03) 60%, transparent 100%);
+}
+
+@keyframes nebula-float {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.1) rotate(180deg);
+  }
+}
+
+/* Falling stars - smooth diagonal movement with enhanced visibility */
+.star-falling {
+  background: linear-gradient(var(--fall-angle, 45deg), 
+    rgba(255, 255, 255, 1) 0%, 
+    rgba(255, 255, 255, 0.9) 20%, 
+    rgba(255, 255, 255, 0.6) 50%, 
+    rgba(255, 255, 255, 0.2) 80%, 
+    transparent 100%);
+  border-radius: 50% 0 50% 0;
+  animation: falling-star infinite linear;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 255, 255, 0.4);
+  transform-origin: center;
+}
+
+.star-falling:nth-child(3n) {
+  background: linear-gradient(var(--fall-angle, 45deg), 
+    rgba(173, 216, 230, 1) 0%, 
+    rgba(173, 216, 230, 0.9) 20%, 
+    rgba(173, 216, 230, 0.6) 50%, 
+    rgba(173, 216, 230, 0.2) 80%, 
+    transparent 100%);
+  box-shadow: 0 0 6px rgba(173, 216, 230, 0.8), 0 0 12px rgba(173, 216, 230, 0.4);
+}
+
+.star-falling:nth-child(5n) {
+  background: linear-gradient(var(--fall-angle, 45deg), 
+    rgba(255, 218, 185, 1) 0%, 
+    rgba(255, 218, 185, 0.9) 20%, 
+    rgba(255, 218, 185, 0.6) 50%, 
+    rgba(255, 218, 185, 0.2) 80%, 
+    transparent 100%);
+  box-shadow: 0 0 6px rgba(255, 218, 185, 0.8), 0 0 12px rgba(255, 218, 185, 0.4);
+}
+
+.star-falling:nth-child(7n) {
+  background: linear-gradient(var(--fall-angle, 45deg), 
+    rgba(255, 182, 193, 1) 0%, 
+    rgba(255, 182, 193, 0.9) 20%, 
+    rgba(255, 182, 193, 0.6) 50%, 
+    rgba(255, 182, 193, 0.2) 80%, 
+    transparent 100%);
+  box-shadow: 0 0 6px rgba(255, 182, 193, 0.8), 0 0 12px rgba(255, 182, 193, 0.4);
+}
+
+@keyframes falling-star {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px) translateY(-60px) rotate(var(--fall-angle, 45deg)) scale(0);
+  }
+  3% {
+    opacity: 1;
+    transform: translateX(-40px) translateY(-40px) rotate(var(--fall-angle, 45deg)) scale(1);
+  }
+  97% {
+    opacity: 1;
+    transform: translateX(calc(100vw + 60px)) translateY(calc(100vh + 60px)) rotate(var(--fall-angle, 45deg)) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(calc(100vw + 80px)) translateY(calc(100vh + 80px)) rotate(var(--fall-angle, 45deg)) scale(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .star:nth-child(n+251) {
+    display: none;
+  }
+  
+  .galaxy-background {
+    animation-duration: 100s;
+  }
+  
+  .star-falling {
+    animation-duration: 2s !important;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.6), 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@media (max-width: 480px) {
+  .star:nth-child(n+201) {
+    display: none;
+  }
+  
+  .star-nebula {
+    filter: blur(0.5px);
+  }
+  
+  .star-falling {
+    animation-duration: 1.8s !important;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.6);
+  }
+}
+
+/* Accessibility - respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .star,
+  .galaxy-background {
+    animation: none;
+  }
+  
+  .star-distant {
+    opacity: 0.3;
+    animation: gentle-twinkle 8s infinite ease-in-out;
+  }
+  
+  .star-medium {
+    opacity: 0.5;
+  }
+  
+  .star-bright {
+    opacity: 0.7;
+  }
+  
+  .star-falling {
+    display: none;
+  }
+  
+  @keyframes gentle-twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.5; }
+  }
+}
+
+/* Dark theme enhancement */
+@media (prefers-color-scheme: dark) {
+  .galaxy-container {
+    background: radial-gradient(ellipse at center, #0a0a1a 0%, #000000 70%);
+  }
+  
+  .star-bright {
+    box-shadow: 
+      0 0 4px rgba(255, 255, 255, 0.8),
+      0 0 8px rgba(255, 255, 255, 0.4);
+  }
+}

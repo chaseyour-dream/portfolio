@@ -1,0 +1,402 @@
+.experience {
+  background: #1a1a1a;
+  position: relative;
+}
+
+.experience::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(196, 30, 58, 0.02) 0%, rgba(255, 119, 198, 0.02) 100%);
+  z-index: 1;
+}
+
+.experience .container {
+  position: relative;
+  z-index: 2;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.experience-card {
+  background: #2d2d2d;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  animation: float 6s ease-in-out infinite;
+}
+
+.experience-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.experience-card:nth-child(even) {
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+.certificate-section {
+  position: relative;
+  overflow: hidden;
+  margin: 1rem;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.certificate-image {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.certificate-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  background: #ffffff;
+  border-radius: 15px;
+}
+
+.certificate-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 15px;
+  pointer-events: none;
+}
+
+.certificate-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: white;
+  color: #c41e3a;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  pointer-events: none;
+}
+
+.experience-content {
+  padding: 2rem;
+}
+
+.experience-header {
+  margin-bottom: 1.5rem;
+}
+
+.job-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.company-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.company-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #c41e3a;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.company-button {
+  background: #c41e3a;
+  color: white !important;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.company-button:hover {
+  background: #a01729;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(196, 30, 58, 0.3);
+}
+
+.company-button .icon {
+  color: white;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #cccccc;
+  font-size: 0.9rem;
+}
+
+.date-range {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.current-badge {
+  background: #c41e3a;
+  color: white;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-left: 1rem;
+  font-weight: 600;
+}
+
+.job-description {
+  color: #cccccc;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.certificate-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.certificate-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #c41e3a;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.certificate-link:hover {
+  background: #a01729;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
+}
+
+.icon {
+  font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .experience-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.8rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .experience-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .experience-content {
+    padding: 1.8rem;
+  }
+  
+  .job-title {
+    font-size: 1.4rem;
+  }
+  
+  .certificate-section {
+    min-height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .experience-content {
+    padding: 1.5rem;
+  }
+  
+  .job-title {
+    font-size: 1.3rem;
+  }
+  
+  .company-name {
+    font-size: 1rem;
+  }
+  
+  .company-button {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .certificate-section {
+    min-height: 150px;
+  }
+  
+  .certificate-actions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .certificate-link {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .experience-content {
+    padding: 1.2rem;
+  }
+  
+  .job-title {
+    font-size: 1.2rem;
+  }
+  
+  .company-info {
+    gap: 0.3rem;
+  }
+  
+  .company-name {
+    font-size: 0.95rem;
+  }
+  
+  .company-button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .location,
+  .date-range {
+    font-size: 0.85rem;
+  }
+  
+  .job-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .certificate-section {
+    min-height: 130px;
+  }
+  
+  .certificate-link {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-content {
+    padding: 1rem;
+  }
+  
+  .job-title {
+    font-size: 1.1rem;
+  }
+  
+  .company-name {
+    font-size: 0.9rem;
+  }
+  
+  .company-button {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.7rem;
+  }
+  
+  .location,
+  .date-range {
+    font-size: 0.8rem;
+  }
+  
+  .job-description {
+    font-size: 0.9rem;
+  }
+  
+  .certificate-section {
+    min-height: 120px;
+  }
+  
+  .certificate-link {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .current-badge {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.6rem;
+    margin-left: 0.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .experience-content {
+    padding: 0.8rem;
+  }
+  
+  .job-title {
+    font-size: 1rem;
+  }
+  
+  .company-name {
+    font-size: 0.85rem;
+  }
+  
+  .company-button {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .job-description {
+    font-size: 0.85rem;
+  }
+  
+  .certificate-link {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}
